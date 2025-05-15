@@ -1,133 +1,68 @@
+# 🩺 Medical Chatbot – AI-Powered Symptom Checker
 
-# End-to-end-Medical-Chatbot-Generative-AI
+An intelligent medical chatbot that interacts with users to understand their symptoms, predict possible health conditions, and recommend appropriate medications. Designed for basic diagnostic support and healthcare assistance using machine learning and natural language processing.
 
+---
 
-# How to run?
-### STEPS:
+## 🚀 Features
 
-Clone the repository
+- 💬 Conversational interface for symptom input
+- 🧠 Symptom-based disease prediction using ML models
+- 💊 Medicine recommendations based on predicted condition
+- 📍 (Optional) Integration with location services to suggest nearby medical stores
+- 🔐 Secure handling of API keys using environment variables
 
-```bash
-Project repo: https://github.com/
-```
-### STEP 01- Create a conda environment after opening the repository
+---
 
-```bash
-conda create -n medibot python=3.10 -y
-```
-
-```bash
-conda activate medibot
-```
-
-
-### STEP 02- install the requirements
-```bash
-pip install -r requirements.txt
-```
-
-
-### Create a `.env` file in the root directory and add your Pinecone & openai credentials as follows:
-
-```ini
-PINECONE_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-OPENAI_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-```
-
-
-```bash
-# run the following command to store embeddings to pinecone
-python store_index.py
-```
-
-```bash
-# Finally run the following command
-python app.py
-```
-
-Now,
-```bash
-open up localhost:
-```
-
-
-### Techstack Used:
+## 🛠️ Tech Stack
 
 - Python
-- LangChain
-- Flask
-- GPT
-- Pinecone
+- Flask / Streamlit (Frontend Interface)
+- Scikit-learn / Pandas (ML Backend)
+- dotenv (`python-dotenv` for secure API handling)
+- External Medical API (e.g., Infermedica, OpenAI)
+
+---
+
+## 📦 Installation
+
+1. Clone the repository-
+   git clone https://github.com/your-username/medical-chatbot.git
+   cd medical-chatbot
+
+2. Install Required Packages-
+   Make sure you have Python installed (preferably version 3.8+), then install the dependencies:
+   pip install -r requirements.txt
+
+3. Set Up API Key-
+   Create a file named .env in the root directory and add your API key:
+   API_KEY=your_actual_api_key
+
+ 4. Run the Application-
+    If using Flask:
+    API_KEY=your_actual_api_key
+
+    Then open your browser and go to:
+    http://localhost:5000
+
+5. Interact with the chatbot-
+   Enter your symptoms in the chat interface.
+   Get predicted diseases and medicine recommendations.
+
+## 🧪 Usage
+Run the chatbot:
+python app.py
+
+## 🛡️ Security
+Your API key is kept safe by:
+Storing it in a .env file
+Excluding .env from GitHub via .gitignore
+Providing a .env.example for easy setup
+
+## 🙌 Acknowledgements
+Inspired by the need for accessible AI-based healthcare tools
+Built as part of a personal learning project to explore medical NLP and recommendation systems
 
 
-# AWS-CICD-Deployment-with-Github-Actions
-
-## 1. Login to AWS console.
-
-## 2. Create IAM user for deployment
-
-	#with specific access
-
-	1. EC2 access : It is virtual machine
-
-	2. ECR: Elastic Container registry to save your docker image in aws
 
 
-	#Description: About the deployment
-
-	1. Build docker image of the source code
-
-	2. Push your docker image to ECR
-
-	3. Launch Your EC2 
-
-	4. Pull Your image from ECR in EC2
-
-	5. Lauch your docker image in EC2
-
-	#Policy:
-
-	1. AmazonEC2ContainerRegistryFullAccess
-
-	2. AmazonEC2FullAccess
-
-	
-## 3. Create ECR repo to store/save docker image
-    - Save the URI: 970547337635.dkr.ecr.ap-south-1.amazonaws.com/medicalchatbot
-
-	
-## 4. Create EC2 machine (Ubuntu) 
-
-## 5. Open EC2 and Install docker in EC2 Machine:
-	
-	
-	#optinal
-
-	sudo apt-get update -y
-
-	sudo apt-get upgrade
-	
-	#required
-
-	curl -fsSL https://get.docker.com -o get-docker.sh
-
-	sudo sh get-docker.sh
-
-	sudo usermod -aG docker ubuntu
-
-	newgrp docker
-	
-# 6. Configure EC2 as self-hosted runner:
-    setting>actions>runner>new self hosted runner> choose os> then run command one by one
-
-
-# 7. Setup github secrets:
-
-   - AWS_ACCESS_KEY_ID
-   - AWS_SECRET_ACCESS_KEY
-   - AWS_DEFAULT_REGION
-   - ECR_REPO
-   - PINECONE_API_KEY
-   - OPENAI_API_KEY
-
-    
