@@ -51,16 +51,22 @@ An intelligent medical chatbot that interacts with users to understand their sym
 
 ## 🧪 Usage
 Run the chatbot:
+
 python app.py
 
 ## 🛡️ Security
 Your API key is kept safe by:
+
 Storing it in a .env file
+
 Excluding .env from GitHub via .gitignore
+
 Providing a .env.example for easy setup
 
 ## 🙌 Acknowledgements
+
 Inspired by the need for accessible AI-based healthcare tools
+
 Built as part of a personal learning project to explore medical NLP and recommendation systems
 
 
